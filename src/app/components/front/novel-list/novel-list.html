@@ -1,1 +1,22 @@
 <h2>Nos romans</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Titre</th>
+    <th>Infos</th>
+  </tr>
+
+  @for(n of novels(); track n.id) {
+    <tr>
+      <td>{{n.id}}</td>
+      <td>{{n.title}}</td>
+      <td>
+       <button class="btn btn-info"
+        [routerLink]="['/allBooks/novel', n.id]">
+  Infos
+</button>
+      </td>
+    </tr>
+  }
+</table>

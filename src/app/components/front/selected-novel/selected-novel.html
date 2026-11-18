@@ -1,0 +1,39 @@
+
+@if (novel()) {
+  <div class="card mx-auto mt-5" style="width: 18rem">
+
+    <div class="card-header text-center">
+      Auteur: {{ novel()?.author }}
+    </div>
+
+    <div class="card-body text-center">
+
+      <h5 class="card-title"
+          [class.text-primary]="novel()?.isNew">
+        {{ novel()?.title}}
+      </h5>
+
+      <p>Catégorie: {{ novel()?.category}}</p>
+
+      <p>Prix: {{ novel()?.price }} DT</p>
+
+    </div>
+
+    <div class="card-footer text-center">
+
+      <button class="btn btn-dark me-4"
+              (click)="onBack()">
+        Retour
+      </button>
+
+      <button class="btn btn-danger"
+              (click)="onDelete()">
+        Supprimer
+      </button>
+
+    </div>
+  </div>
+}
+@else {
+  <p>Roman introuvable</p>
+}
